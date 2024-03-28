@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "SSTLight";
+  src: url("../static/fonts/SSTLight.TTF") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow: hidden;
+}
+
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.credits {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #ffffff;
+  text-align: right;
+  font-family: "Roboto", sans-serif;
+}
+#css {
+  cursor: pointer;
+}
+.credits a {
+  color: inherit;
+}
+
+#drawing-canvas {
+  background-color: #ffffff;
+  display: none;
+}
+
+iframe {
+  overflow: auto;
+}
+
+.css3d {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  opacity: 0;
+}
+.iframe-wrapper {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dot {
+  display: none;
+  z-index: 10;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.1s, height 0.1s;
+}
+
+.increase-dot {
+  width: 15px !important;
+  height: 15px !important;
+}
+.pause-menu {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  align-items: center;
+  font-family: "SSTLight", sans-serif;
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  z-index: 99;
+  width: 100%;
+  height: 40%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+}
+#resume-text {
+  user-select: none;
+  animation: opacityAnimation 2s linear infinite;
+}
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#trophy {
+  position: fixed;
+  top: 10px;
+  right: -600px;
+  width: 550px;
+  height: 120px;
+  display: none;
+  background: linear-gradient(to right, #505050 0%, #333333 30%, #1e1e1e 100%);
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  display: none;
+  opacity: 0;
+  z-index: 999;
+  align-items: center;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    right: -600px;
+  }
+
+  to {
+    opacity: 1;
+    right: 10px;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    right: 10px;
+  }
+
+  to {
+    opacity: 0;
+    right: -600px;
+  }
+}
+
+#textos {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#trophy_logo {
+  position: relative;
+  top: 10%;
+  float: left;
+  margin-left: 20px;
+  width: 80px;
+  height: auto;
+}
+
+#trophy div {
+  text-align: left;
+}
+
+#trophy p {
+  font-family: "SSTLight", sans-serif;
+  margin-bottom: 5px;
+  color: #f0f0f0;
+  float: bottom;
+}
+
+#textos .icono {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+#trophyText {
+  font-family: "SSTLight", sans-serif;
+
+  font-size: 1.7rem;
+  font-weight: 10px;
+}
+
+#subtrophyText {
+  font-family: "SSTLight", sans-serif;
+
+  font-size: 1.5rem;
+  font-weight: 10px;
+  color: #8d8d8d;
+}
+
+#containerFirstLine {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
