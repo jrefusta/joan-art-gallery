@@ -185,6 +185,10 @@ export default class Paintings {
       texture.colorSpace = LinearSRGBColorSpace;
       texture.anisotropy = this.maxAnisotropy;
       texture.needsUpdate = true;
+      const textureDescription = painting.textureDescription;
+      textureDescription.colorSpace = SRGBColorSpace;
+      textureDescription.anisotropy = this.maxAnisotropy;
+      textureDescription.needsUpdate = true;
     });
   }
   initTextureNote(textureNote) {
@@ -262,6 +266,9 @@ export default class Paintings {
     this.mainPainting.rotateY(Math.PI);
     this.scene.add(this.mainPainting);
 
+    this.initTextureNote(this.resources.items.nextButton);
+    this.initTextureNote(this.resources.items.prevButton);
+
     const materialNext = this.setMaterialFromTexture(
       this.resources.items.nextButton,
       0.5
@@ -270,15 +277,20 @@ export default class Paintings {
       this.resources.items.prevButton,
       0.5
     );
+
     const geomButtons = new PlaneGeometry(0.8, 0.8);
     const prev = new Mesh(geomButtons, materialPrev);
     const next = new Mesh(geomButtons, materialNext);
+
     next.name = "nextButton";
     prev.name = "prevButton";
+
     next.position.set(-5.58684 + 3.5, -1.9, 6.21397 + 0.1);
     next.rotateY(Math.PI);
+
     prev.position.set(-5.58684 + 10, -1.9, 6.21397 + 0.1);
     prev.rotateY(Math.PI);
+
     this.scene.add(prev);
     this.scene.add(next);
 
@@ -297,9 +309,10 @@ export default class Paintings {
     this.scene.add(this.description);
     const liveDemoGeom = new PlaneGeometry(3 / 3, 1 / 3);
 
+    this.initTextureNote(this.resources.items.liveDemo);
     const materialLiveDemo = this.setMaterialFromTexture(
       this.resources.items.liveDemo,
-      1
+      0.5
     );
     this.liveDemo = new Mesh(liveDemoGeom, materialLiveDemo);
     this.liveDemo.name = "liveDemo";
@@ -309,6 +322,7 @@ export default class Paintings {
 
     this.scene.add(this.liveDemo);
 
+    this.initTextureNote(this.resources.items.sourceCode);
     const sourceCodeGeom = new PlaneGeometry(4 / 3, 1 / 3);
 
     const materialSourceCode = this.setMaterialFromTexture(
@@ -386,6 +400,7 @@ export default class Paintings {
       onComplete: () => {
         this.description.material.map.dispose();
         this.description.material.dispose();
+        console.log(paintingTextureDescription);
         this.description.material = this.setMaterialFromTexture(
           paintingTextureDescription,
           0
