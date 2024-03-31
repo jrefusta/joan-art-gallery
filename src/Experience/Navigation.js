@@ -31,7 +31,8 @@ export default class Navigation {
     this.STEPS_PER_FRAME = 5;
     this.headBobTimer = 0;
     this.headBobActive = false;
-
+    this.prevDeltaY = 0;
+    this.isHigher = false;
     this.playerVelocity = new Vector3();
     this.playerDirection = new Vector3(0, 10, 0);
 
@@ -305,6 +306,20 @@ export default class Navigation {
     this.camera.instance.position.copy(this.playerCollider.end);
     this.camera.instance.position.y += 0.7;
     const deltaY = Math.sin(this.headBobTimer * 17) * 0.06;
+
+    if (this.isHigher) {
+      if (deltaY > this.prevDeltaY) {
+        this.isHigher = false;
+        // TODO: ADD STEP SOUND HERE
+        console.log("Step here");
+      }
+    } else {
+      if (deltaY < this.prevDeltaY) {
+        this.isHigher = true;
+      }
+    }
+    this.prevDeltaY = deltaY;
+
     this.camera.instance.position.y += deltaY;
   }
   controls(deltaTime) {
