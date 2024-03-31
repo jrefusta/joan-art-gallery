@@ -304,10 +304,8 @@ export default class Navigation {
 
     this.camera.instance.position.copy(this.playerCollider.end);
     this.camera.instance.position.y += 0.7;
-    if (this.headBobActive && this.deltaY) {
-      const deltaY = Math.sin(this.headBobTimer * 17) * 0.06;
-      this.camera.instance.position.y += deltaY;
-    }
+    const deltaY = Math.sin(this.headBobTimer * 17) * 0.06;
+    this.camera.instance.position.y += deltaY;
   }
   controls(deltaTime) {
     if (!document.pointerLockElement) {
@@ -355,7 +353,6 @@ export default class Navigation {
         1 + Math.floor(((this.headBobTimer + 0.000001) * 10) / wavelength);
       const nextStepTime = (nextStep * wavelength) / 10;
       this.headBobTimer = Math.min(this.headBobTimer + deltaTime, nextStepTime);
-      this.deltaY = Math.sin(this.headBobTimer * 17) * 0.005;
       if (this.headBobTimer == nextStepTime) {
         this.headBobActive = false;
       }
