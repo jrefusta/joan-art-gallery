@@ -66,7 +66,7 @@ export default class Paintings {
       {
         id: "portfolio",
         textureDescription: this.resources.items["portfolioDescription"],
-        texturePainting: this.resources.items["portfolio"].clone(),
+        texturePainting: this.resources.items["portfolio"],
         liveDemo: null,
         sourceCode: null,
         seen: true,
@@ -75,7 +75,7 @@ export default class Paintings {
         id: "joanArcadeMachine",
         textureDescription:
           this.resources.items["joanArcadeMachineDescription"],
-        texturePainting: this.resources.items["joanArcadeMachine"].clone(),
+        texturePainting: this.resources.items["joanArcadeMachine"],
         liveDemo: "https://jrefusta.itch.io/starduster",
         sourceCode: null,
         seen: false,
@@ -83,7 +83,7 @@ export default class Paintings {
       {
         id: "joanOS",
         textureDescription: this.resources.items["joanOSDescription"],
-        texturePainting: this.resources.items["joanOS"].clone(),
+        texturePainting: this.resources.items["joanOS"],
         liveDemo: "https://jrefusta.itch.io/starduster",
         sourceCode: null,
         seen: false,
@@ -92,7 +92,7 @@ export default class Paintings {
       {
         id: "joanArtGallery",
         textureDescription: this.resources.items["joanArtGalleryDescription"],
-        texturePainting: this.resources.items["joanArtGallery"].clone(),
+        texturePainting: this.resources.items["joanArtGallery"],
         liveDemo: "https://jrefusta.itch.io/starduster",
         sourceCode: null,
         seen: false,
@@ -100,7 +100,7 @@ export default class Paintings {
       {
         id: "starduster",
         textureDescription: this.resources.items["stardusterDescription"],
-        texturePainting: this.resources.items["starduster"].clone(),
+        texturePainting: this.resources.items["starduster"],
         liveDemo: "https://jrefusta.itch.io/starduster",
         sourceCode: null,
         seen: false,
@@ -108,7 +108,7 @@ export default class Paintings {
       {
         id: "cobayaunchained",
         textureDescription: this.resources.items["cobayaunchainedDescription"],
-        texturePainting: this.resources.items["cobayaUnchained"].clone(),
+        texturePainting: this.resources.items["cobayaUnchained"],
         liveDemo: "https://www.cobayaunchained.com/",
         sourceCode: "https://github.com/jrefusta/CobayaUnchained-3D-Website",
         seen: false,
@@ -116,7 +116,7 @@ export default class Paintings {
       {
         id: "ghostly-footsteps",
         textureDescription: this.resources.items["ghostlyFootstepsDescription"],
-        texturePainting: this.resources.items["ghostlyFootsteps"].clone(),
+        texturePainting: this.resources.items["ghostlyFootsteps"],
         liveDemo: "https://jrefusta.itch.io/ghostly-footsteps",
         sourceCode: null,
         seen: false,
@@ -124,7 +124,7 @@ export default class Paintings {
       {
         id: "save-the-crew",
         textureDescription: this.resources.items["saveTheCrewDescription"],
-        texturePainting: this.resources.items["saveTheCrew"].clone(),
+        texturePainting: this.resources.items["saveTheCrew"],
         liveDemo: "https://jrefusta.itch.io/save-the-crew",
         sourceCode: null,
         seen: false,
@@ -132,7 +132,7 @@ export default class Paintings {
       {
         id: "tfg",
         textureDescription: this.resources.items["tfgDescription"],
-        texturePainting: this.resources.items["tfg"].clone(),
+        texturePainting: this.resources.items["tfg"],
         liveDemo: null,
         sourceCode:
           "https://github.com/jrefusta/TFG-Amueblado-de-propiedades-en-3D/",
@@ -141,7 +141,7 @@ export default class Paintings {
       {
         id: "qomp",
         textureDescription: this.resources.items["qompDescription"],
-        texturePainting: this.resources.items["qomp"].clone(),
+        texturePainting: this.resources.items["qomp"],
         liveDemo: null,
         sourceCode: "https://github.com/jrefusta/Unity-Qomp-Videogame",
         seen: false,
@@ -149,7 +149,7 @@ export default class Paintings {
       {
         id: "break-in",
         textureDescription: this.resources.items["breakInDescription"],
-        texturePainting: this.resources.items["breakIn"].clone(),
+        texturePainting: this.resources.items["breakIn"],
         liveDemo: null,
         sourceCode: "https://github.com/jrefusta/OpenGL-Break-In-Videogame",
         seen: false,
@@ -157,7 +157,7 @@ export default class Paintings {
       {
         id: "apocalypse-now",
         textureDescription: this.resources.items["apocalypseNowDescription"],
-        texturePainting: this.resources.items["apocalypseNow"].clone(),
+        texturePainting: this.resources.items["apocalypseNow"],
         liveDemo: null,
         sourceCode: "https://github.com/jrefusta/EDA-Joc-FIB-ApocalypseNow/",
         seen: false,
@@ -241,7 +241,7 @@ export default class Paintings {
     return new MeshBasicMaterial({
       map: texture,
       side: DoubleSide,
-      transparent: true,
+      transparent: 1,
       opacity: opacity,
     });
   }

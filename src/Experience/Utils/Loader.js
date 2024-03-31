@@ -4,8 +4,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
-/* import { BasisTextureLoader } from 'three/examples/jsm/loaders/BasisTextureLoader.js'
- */
+import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";
+
 export default class Resources extends EventEmitter {
   /**
    * Constructor
@@ -48,18 +48,18 @@ export default class Resources extends EventEmitter {
     });
 
     // Basis images
-    /* const basisLoader = new BasisTextureLoader();
-    basisLoader.setTranscoderPath("basis");
+    const basisLoader = new KTX2Loader();
+    basisLoader.setTranscoderPath("basis/");
     basisLoader.detectSupport(this.renderer);
 
     this.loaders.push({
-      extensions: ["basis"],
+      extensions: ["ktx2"],
       action: (_resource) => {
         basisLoader.load(_resource.source, (_data) => {
           this.fileLoadEnd(_resource, _data);
         });
       },
-    }); */
+    });
 
     // Draco
     const dracoLoader = new DRACOLoader();
@@ -121,7 +121,7 @@ export default class Resources extends EventEmitter {
   load(_resources = []) {
     for (const _resource of _resources) {
       this.toLoad++;
-      const extensionMatch = _resource.source.match(/\.([a-z]+)$/);
+      const extensionMatch = _resource.source.match(/\.([a-zA-Z0-9]+)$/);
 
       if (typeof extensionMatch[1] !== "undefined") {
         const extension = extensionMatch[1];
