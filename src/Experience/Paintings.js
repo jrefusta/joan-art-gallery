@@ -400,7 +400,6 @@ export default class Paintings {
       onComplete: () => {
         this.description.material.map.dispose();
         this.description.material.dispose();
-        console.log(paintingTextureDescription);
         this.description.material = this.setMaterialFromTexture(
           paintingTextureDescription,
           0
