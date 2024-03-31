@@ -397,7 +397,7 @@ export default class Navigation {
         this.dot.classList.add("increase-dot");
         const material = currentIntersectedObject.material;
         gsap.to(material, { opacity: 1, duration: 0.1, ease: "power1.inOut" });
-      } else if (currentIntersectedObject.parent?.parent?.name == "door") {
+      } else if (currentIntersectedObject.parent?.name == "door") {
         if (this.doorTrophyObtained) {
           return;
         }

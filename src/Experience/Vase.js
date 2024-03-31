@@ -17,16 +17,27 @@ export default class Vase {
     this.vaseAnimation = this.resources.items.vaseAnimation.scene;
     this.vaseAnimation.position.y = this.vaseAnimation.position.y - 0.05;
     this.vaseAnimation.visible = false;
+    const vaseTexture = this.resources.items.vaseTexture;
+    vaseTexture.wrapS = THREE.RepeatWrapping;
+    vaseTexture.wrapT = THREE.RepeatWrapping;
+    vaseTexture.colorSpace = "srgb";
+    vaseTexture.repeat.set(4, 4);
+    vaseTexture.needsUpdate = true;
+
     this.vaseIdle.traverse((child) => {
       if (child.isMesh) {
-        child.material = new THREE.MeshPhongMaterial({ color: 0xeda72d });
+        child.material = new THREE.MeshPhongMaterial({
+          map: vaseTexture,
+        });
         child.material.shininess = 100;
         child.castShadow = true;
       }
     });
     this.vaseAnimation.traverse((child) => {
       if (child.isMesh) {
-        child.material = new THREE.MeshPhongMaterial({ color: 0xeda72d });
+        child.material = new THREE.MeshPhongMaterial({
+          map: vaseTexture,
+        });
         child.material.shininess = 100;
         child.castShadow = true;
       }

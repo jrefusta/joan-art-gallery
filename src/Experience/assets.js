@@ -233,6 +233,11 @@ export default [
         type: "texture",
       },
       {
+        name: "vaseTexture",
+        source: "/assets/vase/vaseTexture.ktx2",
+        type: "texture",
+      },
+      {
         name: "doorTrophy",
         source: "/assets/trophies/door-trophy.png",
         type: "texture",
