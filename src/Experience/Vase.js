@@ -8,6 +8,7 @@ export default class Vase {
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
     this.renderer = this.experience.renderer.instance;
+    this.maxAnisotropy = this.renderer.capabilities.getMaxAnisotropy();
     this.clock = new THREE.Clock();
     this.initVase();
   }
@@ -21,6 +22,7 @@ export default class Vase {
     vaseTexture.wrapS = THREE.RepeatWrapping;
     vaseTexture.wrapT = THREE.RepeatWrapping;
     vaseTexture.colorSpace = "srgb";
+    vaseTexture.anisotropy = this.maxAnisotropy;
     vaseTexture.repeat.set(4, 4);
     vaseTexture.needsUpdate = true;
 
@@ -65,6 +67,7 @@ export default class Vase {
   }
 
   breakVase() {
+    window.parent.postMessage("vase", "*");
     this.vaseAnimation.visible = true;
     this.vaseIdle.visible = false;
     this.animations.forEach((animation) => {

@@ -34,8 +34,8 @@ export default class Navigation {
     this.prevDeltaY = 0;
     this.isHigher = false;
     this.playerVelocity = new Vector3();
-    this.playerDirection = new Vector3(0, 10, 0);
-
+    this.playerDirection = new Vector3(0, 0, 0);
+    this.footstep = 1;
     this.playerOnFloor = false;
     this.raycaster = new Raycaster();
     this.keyStates = {};
@@ -48,7 +48,7 @@ export default class Navigation {
     this.prevTrophyObtained = false;
     this.sourceCodeTrophyObtained = false;
     this.liveDemoTrophyObtained = false;
-
+    this.spaceIsPressed = false;
     this.initEvents();
     this.currentObjectRaycasted = null;
     this.playerCollider = new Capsule(
@@ -108,12 +108,26 @@ export default class Navigation {
 
   // Handler for keydown event
   handleKeyDown = (event) => {
-    this.keyStates[event.code] = true;
+    if (event.code == "Space") {
+      if (!this.spaceIsPressed) {
+        this.spaceIsPressed = true;
+        this.keyStates[event.code] = true;
+      }
+    } else {
+      this.keyStates[event.code] = true;
+    }
   };
 
   // Handler for keyup event
   handleKeyUp = (event) => {
-    this.keyStates[event.code] = false;
+    if (event.code == "Space") {
+      if (this.spaceIsPressed) {
+        this.spaceIsPressed = false;
+        this.keyStates[event.code] = false;
+      }
+    } else {
+      this.keyStates[event.code] = false;
+    }
   };
 
   // Handler for mousedown event
@@ -189,6 +203,7 @@ export default class Navigation {
     const interactionMap = {
       nextButton: {
         action: () => {
+          window.parent.postMessage("start", "*");
           this.paintings.increaseIndex();
           if (!this.nextTrophyObtained) {
             this.nextTrophyObtained = true;
@@ -198,6 +213,7 @@ export default class Navigation {
       },
       prevButton: {
         action: () => {
+          window.parent.postMessage("start", "*");
           this.paintings.decreaseIndex();
           if (!this.prevTrophyObtained) {
             this.prevTrophyObtained = true;
@@ -207,6 +223,7 @@ export default class Navigation {
       },
       sourceCode: {
         action: () => {
+          window.parent.postMessage("start", "*");
           this.paintings.sourceCodeClick();
           if (!this.sourceCodeTrophyObtained) {
             this.sourceCodeTrophyObtained = true;
@@ -216,6 +233,7 @@ export default class Navigation {
       },
       liveDemo: {
         action: () => {
+          window.parent.postMessage("start", "*");
           this.paintings.liveDemoClick();
           if (!this.liveDemoTrophyObtained) {
             this.liveDemoTrophyObtained = true;
@@ -230,6 +248,8 @@ export default class Navigation {
           if (this.dot.classList.contains("increase-dot")) {
             this.dot.classList.remove("increase-dot");
           }
+
+          window.parent.postMessage("door", "*");
           this.trophy.showTrophy("door", "silver");
         },
       },
@@ -309,8 +329,10 @@ export default class Navigation {
 
     if (deltaY > this.prevDeltaY && this.isHigher) {
       this.isHigher = false;
-      // TODO: ADD STEP SOUND HERE
-      console.log("Step here");
+      if (this.playerOnFloor) {
+        window.parent.postMessage("footstep0" + this.footstep, "*");
+      }
+      this.footstep = this.footstep == 1 ? 2 : 1;
     } else if (deltaY < this.prevDeltaY && !this.isHigher) {
       this.isHigher = true;
     }
@@ -353,7 +375,9 @@ export default class Navigation {
     }
 
     // Jump if the player is on the floor and Space is pressed
-    if (this.playerOnFloor && this.keyStates["Space"]) {
+    if (this.playerOnFloor && this.keyStates["Space"] && this.spaceIsPressed) {
+      window.parent.postMessage("footstep03", "*");
+      this.keyStates["Space"] = false;
       this.playerVelocity.y = 5;
     }
   }

@@ -125,49 +125,49 @@ export default [
       },
       {
         name: "portfolioDescription",
-        source: "/assets/descriptions/portfolio-description.ktx2",
+        source: "/assets/descriptions/portfolio-description.png",
         type: "texture",
       },
       {
         name: "stardusterDescription",
-        source: "/assets/descriptions/starduster-description.ktx2",
+        source: "/assets/descriptions/starduster-description.png",
         type: "texture",
       },
 
       {
         name: "cobayaunchainedDescription",
-        source: "/assets/descriptions/cobayaunchained-description.ktx2",
+        source: "/assets/descriptions/cobayaunchained-description.png",
         type: "texture",
       },
 
       {
         name: "ghostlyFootstepsDescription",
-        source: "/assets/descriptions/ghostly-footsteps-description.ktx2",
+        source: "/assets/descriptions/ghostly-footsteps-description.png",
         type: "texture",
       },
       {
         name: "saveTheCrewDescription",
-        source: "/assets/descriptions/save-the-crew-description.ktx2",
+        source: "/assets/descriptions/save-the-crew-description.png",
         type: "texture",
       },
       {
         name: "tfgDescription",
-        source: "/assets/descriptions/tfg-description.ktx2",
+        source: "/assets/descriptions/tfg-description.png",
         type: "texture",
       },
       {
         name: "breakInDescription",
-        source: "/assets/descriptions/break-in-description.ktx2",
+        source: "/assets/descriptions/break-in-description.png",
         type: "texture",
       },
       {
         name: "qompDescription",
-        source: "/assets/descriptions/qomp-description.ktx2",
+        source: "/assets/descriptions/qomp-description.png",
         type: "texture",
       },
       {
         name: "apocalypseNowDescription",
-        source: "/assets/descriptions/apocalypse-now-description.ktx2",
+        source: "/assets/descriptions/apocalypse-now-description.png",
         type: "texture",
       },
       {
@@ -197,7 +197,7 @@ export default [
       },
       {
         name: "joanArtGalleryDescription",
-        source: "/assets/descriptions/joan-art-gallery-description.ktx2",
+        source: "/assets/descriptions/joan-art-gallery-description.png",
         type: "texture",
       },
 
@@ -208,7 +208,7 @@ export default [
       },
       {
         name: "joanArcadeMachineDescription",
-        source: "/assets/descriptions/joan-arcade-machine-description.ktx2",
+        source: "/assets/descriptions/joan-arcade-machine-description.png",
         type: "texture",
       },
 
@@ -219,7 +219,7 @@ export default [
       },
       {
         name: "joanOSDescription",
-        source: "/assets/descriptions/joan-os-description.ktx2",
+        source: "/assets/descriptions/joan-os-description.png",
         type: "texture",
       },
       {
@@ -229,7 +229,7 @@ export default [
       },
       {
         name: "doNotTouch",
-        source: "/assets/notes/do-not-touch.ktx2",
+        source: "/assets/notes/do-not-touch.png",
         type: "texture",
       },
       {

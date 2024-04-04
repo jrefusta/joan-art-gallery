@@ -68,6 +68,9 @@ export default class Trophy {
         this.icon.src = this.resources.items.trophyPlatinum.image.src;
     }
 
+    type == "platinum"
+      ? window.parent.postMessage("trophy_platinum", "*")
+      : window.parent.postMessage("trophy", "*");
     this.numTimer = setTimeout(() => {
       this.hideTrophy();
     }, 3000);
