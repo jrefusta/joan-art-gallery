@@ -5,17 +5,17 @@ In this part of my portfolio, I aimed to recreate a virtual first-person experie
 You can now explore it [here](https://joan-art-gallery.app/).
 ## Links
 
-### Joan's Arcade Machine
-- [Source Code](https://github.com/jrefusta/joan-arcade-machine)
-- [Live Demo](https://joan-arcade-machine.vercel.app/)
-
 ### Joan Ramos Refusta's Portfolio
 - [Source Code](https://github.com/jrefusta/joan-portfolio)
 - [Live Demo](https://joanramosrefusta.com/)
 
-### Joan's Art Gallery
-- [Source Code](https://github.com/jrefusta/joan-art-gallery)
-- [Live Demo](https://joan-art-gallery.vercel.app/)
+### Joan's Arcade Machine
+- [Source Code](https://github.com/jrefusta/joan-arcade-machine)
+- [Live Demo](https://joan-arcade-machine.vercel.app/)
+
+### Joan's OS
+- [Source Code](https://github.com/jrefusta/joan-os)
+- [Live Demo](https://joan-os.vercel.app/)
 
 ## Setup
 
