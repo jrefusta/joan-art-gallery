@@ -1,9 +1,21 @@
-# My Room in 3D
+# Joan's Art Gallery
 
+In this part of my portfolio, I aimed to recreate a virtual first-person experience of exploring an art gallery. To achieve this, I created first-person controls and integrated all my side projects as if they were part of the museum's exhibits.
+
+You can now explore it [here](https://joan-art-gallery.app/).
 ## Links
 
-- [GitHub](https://github.com/brunosimon/my-room-in-3d)
-- [Live](https://my-room-in-3d.vercel.app)
+### Joan Ramos Refusta's Portfolio
+- [Source Code](https://github.com/jrefusta/joan-portfolio)
+- [Live Demo](https://joanramosrefusta.com/)
+
+### Joan's Arcade Machine
+- [Source Code](https://github.com/jrefusta/joan-arcade-machine)
+- [Live Demo](https://joan-arcade-machine.vercel.app/)
+
+### Joan's OS
+- [Source Code](https://github.com/jrefusta/joan-os)
+- [Live Demo](https://joan-os.vercel.app/)
 
 ## Setup
 
