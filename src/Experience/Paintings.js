@@ -67,8 +67,8 @@ export default class Paintings {
         id: "portfolio",
         textureDescription: this.resources.items["portfolioDescription"],
         texturePainting: this.resources.items["portfolio"],
-        liveDemo: null,
-        sourceCode: null,
+        liveDemo: "https://www.joanramosrefusta.com/",
+        sourceCode: "https://github.com/jrefusta/joan-portfolio",
         seen: true,
       },
       {
@@ -76,16 +76,16 @@ export default class Paintings {
         textureDescription:
           this.resources.items["joanArcadeMachineDescription"],
         texturePainting: this.resources.items["joanArcadeMachine"],
-        liveDemo: "https://jrefusta.itch.io/starduster",
-        sourceCode: null,
+        liveDemo: "https://joan-arcade-machine.vercel.app/",
+        sourceCode: "https://github.com/jrefusta/joan-arcade-machine",
         seen: false,
       },
       {
         id: "joanOS",
         textureDescription: this.resources.items["joanOSDescription"],
         texturePainting: this.resources.items["joanOS"],
-        liveDemo: "https://jrefusta.itch.io/starduster",
-        sourceCode: null,
+        liveDemo: "https://joan-os.vercel.app/",
+        sourceCode: "https://github.com/jrefusta/joan-os",
         seen: false,
       },
 
@@ -93,8 +93,8 @@ export default class Paintings {
         id: "joanArtGallery",
         textureDescription: this.resources.items["joanArtGalleryDescription"],
         texturePainting: this.resources.items["joanArtGallery"],
-        liveDemo: "https://jrefusta.itch.io/starduster",
-        sourceCode: null,
+        liveDemo: "https://joan-art-gallery.vercel.app/",
+        sourceCode: "https://github.com/jrefusta/joan-art-gallery",
         seen: false,
       },
       {
