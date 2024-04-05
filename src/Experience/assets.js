@@ -124,6 +124,26 @@ export default [
         type: "texture",
       },
       {
+        name: "joanArtGallery",
+        source: "/assets/paintings/joan-art-gallery.ktx2",
+        type: "texture",
+      },
+      {
+        name: "joanArcadeMachine",
+        source: "/assets/paintings/joan-arcade-machine.ktx2",
+        type: "texture",
+      },
+      {
+        name: "joanOS",
+        source: "/assets/paintings/joan-os.ktx2",
+        type: "texture",
+      },
+      {
+        name: "vaseTexture",
+        source: "/assets/vase/vaseTexture.ktx2",
+        type: "texture",
+      },
+      {
         name: "portfolioDescription",
         source: "/assets/descriptions/portfolio-description.png",
         type: "texture",
@@ -190,11 +210,7 @@ export default [
         source: "/assets/trophyLogos/trophy-platinum.png",
         type: "texture",
       },
-      {
-        name: "joanArtGallery",
-        source: "/assets/paintings/joan-art-gallery.ktx2",
-        type: "texture",
-      },
+
       {
         name: "joanArtGalleryDescription",
         source: "/assets/descriptions/joan-art-gallery-description.png",
@@ -202,21 +218,11 @@ export default [
       },
 
       {
-        name: "joanArcadeMachine",
-        source: "/assets/paintings/joan-arcade-machine.ktx2",
-        type: "texture",
-      },
-      {
         name: "joanArcadeMachineDescription",
         source: "/assets/descriptions/joan-arcade-machine-description.png",
         type: "texture",
       },
 
-      {
-        name: "joanOS",
-        source: "/assets/paintings/joan-os.ktx2",
-        type: "texture",
-      },
       {
         name: "joanOSDescription",
         source: "/assets/descriptions/joan-os-description.png",
@@ -232,11 +238,7 @@ export default [
         source: "/assets/notes/do-not-touch.png",
         type: "texture",
       },
-      {
-        name: "vaseTexture",
-        source: "/assets/vase/vaseTexture.ktx2",
-        type: "texture",
-      },
+
       {
         name: "doorTrophy",
         source: "/assets/trophies/door-trophy.png",
