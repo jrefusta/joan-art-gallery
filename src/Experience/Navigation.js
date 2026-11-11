@@ -1,3 +1,4 @@
+import { postToPortfolio } from "../portfolio-messages.js";
 import {
   Clock,
   Vector3,
@@ -203,7 +204,7 @@ export default class Navigation {
     const interactionMap = {
       nextButton: {
         action: () => {
-          window.parent.postMessage("start", "*");
+          postToPortfolio("start");
           this.paintings.increaseIndex();
           if (!this.nextTrophyObtained) {
             this.nextTrophyObtained = true;
@@ -213,7 +214,7 @@ export default class Navigation {
       },
       prevButton: {
         action: () => {
-          window.parent.postMessage("start", "*");
+          postToPortfolio("start");
           this.paintings.decreaseIndex();
           if (!this.prevTrophyObtained) {
             this.prevTrophyObtained = true;
@@ -223,7 +224,7 @@ export default class Navigation {
       },
       sourceCode: {
         action: () => {
-          window.parent.postMessage("start", "*");
+          postToPortfolio("start");
           this.paintings.sourceCodeClick();
           if (!this.sourceCodeTrophyObtained) {
             this.sourceCodeTrophyObtained = true;
@@ -233,7 +234,7 @@ export default class Navigation {
       },
       liveDemo: {
         action: () => {
-          window.parent.postMessage("start", "*");
+          postToPortfolio("start");
           this.paintings.liveDemoClick();
           if (!this.liveDemoTrophyObtained) {
             this.liveDemoTrophyObtained = true;
@@ -249,7 +250,7 @@ export default class Navigation {
             this.dot.classList.remove("increase-dot");
           }
 
-          window.parent.postMessage("door", "*");
+          postToPortfolio("door");
           this.trophy.showTrophy("door", "silver");
         },
       },
@@ -330,7 +331,7 @@ export default class Navigation {
     if (deltaY > this.prevDeltaY && this.isHigher) {
       this.isHigher = false;
       if (this.playerOnFloor) {
-        window.parent.postMessage("footstep0" + this.footstep, "*");
+        postToPortfolio("footstep0" + this.footstep);
       }
       this.footstep = this.footstep == 1 ? 2 : 1;
     } else if (deltaY < this.prevDeltaY && !this.isHigher) {
@@ -376,7 +377,7 @@ export default class Navigation {
 
     // Jump if the player is on the floor and Space is pressed
     if (this.playerOnFloor && this.keyStates["Space"] && this.spaceIsPressed) {
-      window.parent.postMessage("footstep03", "*");
+      postToPortfolio("footstep03");
       this.keyStates["Space"] = false;
       this.playerVelocity.y = 5;
     }

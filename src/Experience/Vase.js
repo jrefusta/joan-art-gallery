@@ -1,3 +1,4 @@
+import { postToPortfolio } from "../portfolio-messages.js";
 import * as THREE from "three";
 
 import Experience from "./Experience.js";
@@ -67,7 +68,7 @@ export default class Vase {
   }
 
   breakVase() {
-    window.parent.postMessage("vase", "*");
+    postToPortfolio("vase");
     this.vaseAnimation.visible = true;
     this.vaseIdle.visible = false;
     this.animations.forEach((animation) => {

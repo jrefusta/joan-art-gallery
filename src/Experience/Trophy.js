@@ -1,3 +1,4 @@
+import { postToPortfolio } from "../portfolio-messages.js";
 import Experience from "./Experience.js";
 
 export default class Trophy {
@@ -69,8 +70,8 @@ export default class Trophy {
     }
 
     type == "platinum"
-      ? window.parent.postMessage("trophy_platinum", "*")
-      : window.parent.postMessage("trophy", "*");
+      ? postToPortfolio("trophy_platinum")
+      : postToPortfolio("trophy");
     this.numTimer = setTimeout(() => {
       this.hideTrophy();
     }, 3000);

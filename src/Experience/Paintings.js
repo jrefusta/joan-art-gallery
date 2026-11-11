@@ -350,13 +350,13 @@ export default class Paintings {
   sourceCodeClick() {
     const url = this.mainPaintingArray[this.currentIndex].sourceCode;
     if (url) {
-      window.open(url);
+      window.open(url, "_blank", "noopener");
     }
   }
   liveDemoClick() {
     const url = this.mainPaintingArray[this.currentIndex].liveDemo;
     if (url) {
-      window.open(url);
+      window.open(url, "_blank", "noopener");
     }
   }
   removeMesh(mesh) {
